@@ -1,7 +1,7 @@
 "use client"
 
 // Imports
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { motion } from "framer-motion";

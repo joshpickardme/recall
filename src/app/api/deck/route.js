@@ -6,9 +6,9 @@ import { NextResponse } from "next/server";
 
 
 export async function POST(request) {
-    const { name, colour, favourite, cards } = await request.json()
+    const { name, colour, favourite, cards, ownerID } = await request.json()
 
     await connectMongoDB();
-    await Deck.create({name, colour, favourite })
-    return NextResponse.json({message: "Card Created"})
+    await Deck.create({name, colour, favourite, cards, ownerID })
+    return NextResponse.json({message: "Deck Created"})
 }

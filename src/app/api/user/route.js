@@ -10,3 +10,9 @@ export async function POST(request) {
     await User.create({name, email, decks})
     return NextResponse.json({message: "User Registered"})
 }
+
+export async function GET() {
+    await connectMongoDB();
+    const users = await User.find();
+    return NextResponse.json({users})
+}

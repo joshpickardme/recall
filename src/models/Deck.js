@@ -6,10 +6,6 @@ const deckSchema = new Schema(
         type: String,
         required: true,
        },
-       deckOwner: {
-        type: String,
-        required: true
-       },
        colour: {
         type: String,
         required: true
@@ -21,6 +17,10 @@ const deckSchema = new Schema(
        cards: {
         type: Array,
         required: false
+       },
+       ownerID: {
+        type: String,
+        required: true,
        }
 
     },

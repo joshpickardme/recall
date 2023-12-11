@@ -15,7 +15,7 @@ export default function Profile() {
     
     return(
         <Main>
-            <Header>Your Profile.</Header>
+            <Header>Your Profile</Header>
             <NotificationBar />
             <div>
                 <ProfileCard></ProfileCard>
