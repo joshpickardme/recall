@@ -1,7 +1,9 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Sidebar from '@/components/Sidebar'
+import { NextAuthProvider } from './Providers'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -9,9 +11,18 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} flex min-h-screen`}>
+        <NextAuthProvider>
+            <Sidebar></Sidebar>
+            <div className='flex ml-20 w-screen mr-4 sm:ml-32 sm:mr-14 overflow-hidden'>
+              {children}
+            </div>
+            
+        </NextAuthProvider>
+        </body>
     </html>
   )
 }
