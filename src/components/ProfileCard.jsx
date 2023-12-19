@@ -4,7 +4,7 @@
 import { useSession } from "next-auth/react"
 import Image from "next/image";
 
-export default function StatCard() {
+export default function ProfileCard() {
     const {status, data: session} = useSession();
     return(
         <div className="flex flex-col justify-between p-6 items-center bg-white shadow-lg w-80 h-[400px] rounded-md">

@@ -11,11 +11,11 @@ export default function SignInBtn({thin}) {
     const { status } = useSession();
     if(status === "authenticated") {
         return (
-            <button onClick={() => signOut()} className="text-white flex justify-center items-center gap-3 text-lg min-w-full py-3"> <FiLogOut />{thin ? "" : "Log out"}</button>
+            <button onClick={() => signOut({callbackUrl: '/'})} className="text-white flex justify-center items-center gap-3 text-lg min-w-full py-3"> <FiLogOut />{thin ? "" : "Log out"}</button>
         )
     } else {
         return(
-            <button onClick={() => signIn('google')} className="text-white flex justify-center items-center gap-3 text-lg min-w-full py-3"> <FiLogIn />{thin ? "" : "Log in"}</button>
+            <button onClick={() => signIn('google', {callbackUrl: "/profile"})} className="text-white flex justify-center items-center gap-3 text-lg min-w-full py-3"> <FiLogIn />{thin ? "" : "Log in"}</button>
         )
     }
 

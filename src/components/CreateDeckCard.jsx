@@ -1,24 +1,29 @@
-"use client"
+"use client";
 
-// Imports
-import CreateDeckModal from "./CreateDeckModal"
-import { useState } from "react"
+import { useEffect, useState } from "react";
+import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import DeckOverview from "./Card";
 
-export default function CreateDeck() {
-    const [showModal, setShowModal] = useState(false)
-
-    function toggleModal() {
-        setShowModal(!showModal)
-    }
+export default function CreateDeckCard() {
 
 
-    return(
-        <>
-        {showModal && <CreateDeckModal toggleModal={toggleModal}></CreateDeckModal>}
-        
-        <div onClick={() => setShowModal(!showModal)} className="w-56 h-72 rounded-md outline-2 outline-dashed outline-gray-500 flex flex-col items-center justify-center hover:cursor-pointer">
-            <h1 className="font-medium text-xl">Create New Deck</h1>
+
+  return (
+    <>
+      <motion.div
+        className={`bg-cyan-500 min-w-[15rem] max-w-[15rem] hover:cursor-pointer max-h-[21rem] min-h-[21rem] rounded-lg outline-gray-500 flex flex-col justify-between items-center p-3`}
+      >
+        <div className="flex min-w-full justify-end">
+        <FaHeart className="text-white hover:cursor-pointer scale-150" />
         </div>
-        </>
-    )
+        <div className="min-w-full">
+          <input type="text" className="bg-transparent max-w-full w-full text-white font-bold text-2xl hover:cursor-pointer outline-none" />
+          <p className="text-white text-2xl">0 cards</p>
+        </div>
+      </motion.div>
+    </>
+  );
 }

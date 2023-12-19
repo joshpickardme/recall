@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
 :root {
   --purple: #202041;
   --darker-purple: #01082A;
   --yellow: #E0973C;
+  --blue: #6763FE;
+  --cyan: #00A0B6;
+  --pink: #E06B9F;
+  --green: #6BE077;
   --gray: #E9E9EC;
   --darker-gray: #D2D2D9;
+  
 }
 
 body {
